@@ -1405,6 +1405,8 @@ indexGateway:
   initContainers: []
   # -- Grace period to allow the index-gateway to shutdown before it is killed.
   terminationGracePeriodSeconds: 300
+  # -- topologySpread for index-gateway pods. Passed through `tpl` and, thus, to be configured as string
+  topologySpreadConstraints: ""
   # -- Affinity for index-gateway pods. Passed through `tpl` and, thus, to be configured as string
   # @default -- Hard node and soft zone anti-affinity
   affinity: |
@@ -1532,6 +1534,8 @@ memcachedChunks:
   extraContainers: []
   # -- Grace period to allow memcached-chunks to shutdown before it is killed
   terminationGracePeriodSeconds: 30
+  # -- topologySpread for memcached-chunks pods. Passed through `tpl` and, thus, to be configured as string
+  topologySpreadConstraints: ""
   # -- Affinity for memcached-chunks pods. Passed through `tpl` and, thus, to be configured as string
   # @default -- Hard node and soft zone anti-affinity
   affinity: |
@@ -1592,6 +1596,8 @@ memcachedFrontend:
   extraContainers: []
   # -- Grace period to allow memcached-frontend to shutdown before it is killed
   terminationGracePeriodSeconds: 30
+  # -- topologySpread for memcached-frontend pods. Passed through `tpl` and, thus, to be configured as string
+  topologySpreadConstraints: ""
   # -- Affinity for memcached-frontend pods. Passed through `tpl` and, thus, to be configured as string
   # @default -- Hard node and soft zone anti-affinity
   affinity: |
@@ -1652,6 +1658,8 @@ memcachedIndexQueries:
   extraContainers: []
   # -- Grace period to allow memcached-index-queries to shutdown before it is killed
   terminationGracePeriodSeconds: 30
+  # -- topologySpread for memcached-index-queries pods. Passed through `tpl` and, thus, to be configured as string
+  topologySpreadConstraints: ""
   # -- Affinity for memcached-index-queries pods. Passed through `tpl` and, thus, to be configured as string
   # @default -- Hard node and soft zone anti-affinity
   affinity: |
@@ -1712,6 +1720,8 @@ memcachedIndexWrites:
   extraContainers: []
   # -- Grace period to allow memcached-index-writes to shutdown before it is killed
   terminationGracePeriodSeconds: 30
+  # -- topologySpread for memcached-index-writes pods. Passed through `tpl` and, thus, to be configured as string
+  topologySpreadConstraints: ""
   # -- Affinity for memcached-index-writes pods. Passed through `tpl` and, thus, to be configured as string
   # @default -- Hard node and soft zone anti-affinity
   affinity: |
